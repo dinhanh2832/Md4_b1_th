@@ -11,6 +11,10 @@
     <title>Title</title>
 </head>
 <body>
-<p><input value="13" type="text" name="age"></p>
+<form>
+    <input type="text" name="english">
+    <button>Tìm</button>
+</form>
+<p>${result}</p>
 </body>
 </html>
