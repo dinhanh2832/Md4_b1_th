@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form>
+<form method="post">
     <input type="text" name="english">
     <button>Tìm</button>
 </form>

@@ -35,7 +35,7 @@ public class DictionaryServiceImpl implements Service<Dictionary> {
     public List<Dictionary> printAll() throws SQLException {
         List<Dictionary> productList = new ArrayList<>();
         Connection connection = getConnection();
-        PreparedStatement preparedStatement = connection.prepareStatement("select *from dictionary");
+        PreparedStatement preparedStatement = connection.prepareStatement("select * from dictionary");
         ResultSet rs = preparedStatement.executeQuery();
         while (rs.next()) {
             String english = rs.getString("english");

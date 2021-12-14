@@ -14,8 +14,9 @@
 
     <mvc:annotation-driven/>
 
-    <bean name="dictionaryService" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+    <bean name="dictionaryService" class="com.codegym.service.DictionaryServiceImpl"/>
 </beans>

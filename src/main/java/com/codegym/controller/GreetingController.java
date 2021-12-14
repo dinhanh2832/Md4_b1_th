@@ -13,16 +13,17 @@ import java.sql.SQLException;
 @Controller
 public class GreetingController {
     @Autowired
-    private Service<Dictionary> dictionaryService = DictionaryServiceImpl.getContent();
-    @GetMapping("/")
+    DictionaryServiceImpl dictionaryService ;
+
+    @GetMapping("")
     public ModelAndView greeting() {
         return new ModelAndView("/input");
     }
-    @PostMapping("/")
-    public ModelAndView find(@RequestParam String english) throws SQLException {
+    @PostMapping("")
+    public ModelAndView find(Model model,@RequestParam String english) throws SQLException {
         ModelAndView modelAndView = new ModelAndView("/input");
         Dictionary dictionary = dictionaryService.findByName(english);
-        modelAndView.addObject("result", dictionary.getViet());
+        model.addAttribute("result", dictionary.getViet());
         return modelAndView;
     }
 }
